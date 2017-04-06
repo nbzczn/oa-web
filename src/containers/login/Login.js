@@ -39,6 +39,7 @@ class Login extends React.Component {
     }
 
     render() {
+        // console.log(this.state.username)
         return (
             <div className="page-login full-height">
                 <div className="main-body">
@@ -78,6 +79,7 @@ class Login extends React.Component {
                                         <RaisedButton
                                             label="登录"
                                             primary={true}
+                                            onClick={this._handleDoLogin}
                                         />
                                     </div>
                                 </div>
@@ -98,11 +100,12 @@ class Login extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        isLoggedIn: state.userStore.isLoggedIn
+        isLoggedIn: state.userStore.isLoggedIn,
+        loginStatus: state.userStore.status
     }
 }
 
-const mapDispatchToProps = (dispatch)=>{
+const mapDispatchToProps = (dispatch) => {
     return {
         // 执行登录操作
         _doLogIn: (opt) => {

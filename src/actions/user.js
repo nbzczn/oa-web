@@ -1,3 +1,4 @@
+
 import {
     LOGGED_DOING,
     LOGGED_ERROR,
@@ -6,8 +7,12 @@ import {
 } from './const'
 
 export const logIn = (opt) => {
-    // 将状态设置为登陆中
-    dispatch({'type': LOGGED_DOING})
+    return (dispatch) => {
+        // 将状态设置为登陆中
+        dispatch({'type': LOGGED_DOING})
+        //
+        dispatch({'type': LOGGED_OUT})
+    }
 }
 export const logOut = () => {
     return {
