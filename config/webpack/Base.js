@@ -195,6 +195,7 @@ class WebpackBaseConfig {
             resolve: {
                 alias: {
                     actions: `${this.srcPathAbsolute}/actions/`,
+                    assets: `${this.srcPathAbsolute}/assets/`,
                     components: `${this.srcPathAbsolute}/components/`,
                     containers: `${this.srcPathAbsolute}/containers/`,
                     config: `${this.srcPathAbsolute}/config/${this.env}.js`,

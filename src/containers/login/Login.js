@@ -7,6 +7,8 @@ import QueueAnim from 'rc-queue-anim'
 import {logIn} from 'actions/user'
 
 import LoginLogo from 'images/login-logo.png'
+import CircularProgress from 'material-ui/CircularProgress'
+import loadingGif from 'assets/images/loading.gif'
 
 class Login extends React.Component {
     constructor() {
@@ -75,9 +77,10 @@ class Login extends React.Component {
                                         </form>
                                     </div>
                                     <div className="card-action no-border text-right">
-                                        {/*<a href="#/" className="color-primary">登录</a>*/}
                                         <RaisedButton
-                                            label="登录"
+                                            disabled={this.props.loginStatus === 'doing'}
+                                            icon={this.props.loginStatus === 'doing' ? <img width='16' height='16' src={loadingGif} alt=""/> : null}
+                                            label={this.props.loginStatus === 'doing' ? '登陆中...' : '登录'}
                                             primary={true}
                                             onClick={this._handleDoLogin}
                                         />
